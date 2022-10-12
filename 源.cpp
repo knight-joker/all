@@ -1,14 +1,22 @@
 #include<stdio.h>
-#include<windows.h>
-int main() {
-	for (float y = 1.5f; y > -1.5f; y -= 0.1f) {
-		for (float x = -1.5f; x < 1.5f; x += 0.05f) {
-			float a = x * x + y * y - 1;
-			putchar(a * a * a - x * x * y * y * y < 0.0f ? '*' : ' ');
-		}
-		Sleep(100);
-		system("color 0c");
-		putchar('\n');
+void move(int n, char A, char B, char C)
+{
+	if (n == 1)
+	{
+		printf("%c ->%c\n",A,C);//基础
 	}
+	else
+	{
+		move(n - 1, A, B, C);
+		printf("%c ->%c\n", A, C);
+		move(n-1, B, A, C);//递归
+	}
+}
+int main()
+{
+	int d = 0;
+	scanf_s("%d", &d);//输入n
+	move(d, 'A', 'B','C');
+	printf("游戏结束");
 	return 0;
 }
