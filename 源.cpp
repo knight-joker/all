@@ -1,14 +1,12 @@
 #include<stdio.h>
-#include<windows.h>
-int main() {
-	for (float y = 1.5f; y > -1.5f; y -= 0.1f) {
-		for (float x = -1.5f; x < 1.5f; x += 0.05f) {
-			float a = x * x + y * y - 1;
-			putchar(a * a * a - x * x * y * y * y < 0.0f ? '*' : ' ');
-		}
-		Sleep(100);
-		system("color 0c");
-		putchar('\n');
-	}
+int main()
+{
+	int n = 0;
+	int a = 0;
+	int Sum = 0;
+	printf("ÇëÊäÈëÉÏÏÞ");
+	scanf_s("%d", &n);
+	Sum = n * (n + 1) / 2;
+	printf("%d\n", Sum);
 	return 0;
 }
